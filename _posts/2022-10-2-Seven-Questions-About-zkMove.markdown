@@ -12,6 +12,7 @@ zkMove has been increasingly attracting people’s attention recently, and as th
 <!--more-->
 
 First of all, please allow me to start with a self-introduction. I have taken a full time job in the crypto domain for three years, focusing on the development of virtual machines for smart contracts. Before that, I worked in Intel and Alibaba for many years, mainly engaged in the development and optimization of programming language virtual machines and system software.
+
 ## Q1. What is zkMove?
 zkMove is a smart contract runtime environment. Just like the Java runtime environment is used to run Java programs, zkMove is used to run smart contracts written in the Move language. Like the Java runtime environment, zkMove also relies on the underlying operating system. The difference is that instead of Windows, MacOS or Linux, the operating system here refers to different types of blockchains. zkMove is the execution layer to carry the computation, and the blockchains serve as the settlement and consensus layer.
 

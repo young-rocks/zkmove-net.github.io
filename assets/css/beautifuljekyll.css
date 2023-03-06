@@ -475,6 +475,7 @@ footer .footer-custom-content {
 }
 
 .post-preview .post-title {
+  color: #0085A1;
   font-size: 1.875rem;
   margin-top: 0;
 }
@@ -631,7 +632,17 @@ footer .footer-custom-content {
 }
 
 /* --- Post and page headers --- */
-
+.h1-div {
+  display: inline-block; /* 或者使用 display: inline; */
+  width: auto;
+}
+.h1-title-select {
+  color: #FFFFFF;
+  background-color: #0085A1; /* 设置背景颜色为浅灰色 */
+  /*-webkit-background-clip: text; !* Safari/Chrome *!*/
+  /*background-clip: text; !* Non-prefixed version *!*/
+  /*color: transparent;*/
+}
 .intro-header {
   margin: 5rem 0 1.25rem;
   position: relative;
@@ -667,6 +678,7 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
 }
 .intro-header .page-heading {
   text-align: center;
+  -moz-text-decoration-color: #0d6aad;
 }
 .intro-header.big-img .page-heading,
 .intro-header.big-img .post-heading {

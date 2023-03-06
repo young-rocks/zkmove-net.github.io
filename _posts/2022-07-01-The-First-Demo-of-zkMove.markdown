@@ -10,16 +10,6 @@ categories: demo
 Last week, I gave a demo at the Move community’s weekly meeting. It was the first public appearance of zkMove. We had a comprehensive discussion about the features of zkMove, which I will summarize briefly here with this post.
 <!--more-->
 
-
-
-## The First Demo of zkMove
-
-
-
-> Hello, everyone! This is Guangyu Zhu, the author of zkMove. Last week, I gave a demo at the Move community's weekly meeting. It was the first public appearance of zkMove. We had an active discussion about the features of zkMove, which I will summarize briefly here with this post.
-
-
-
 ### What‘s zkMove?
 
 zkMove is a zk-proof friendly Move language runtime environment. The initial idea of zkMove is to improve the programmability and composability of zk-proof with Move language. Developers can build scaling and privacy solution based on it. Below is some highlights of zkMove.

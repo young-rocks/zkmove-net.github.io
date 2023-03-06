@@ -7,10 +7,6 @@ date:   2022-01-16 22:32:44 +0800
 categories: glance
 ---
 
-## zkMove at a Glance
-
-
-
 With the boom of Defi and the emergence of non-financial smart contracts, the scalability of public chains, represented by Ethereum, is being increasingly challenged. Although technologies such as POS and sharding can improve the throughput rate to a certain extent, the root cause of congestion still exists in the long run. This is because any transaction that wants to be on the chain requires most nodes across the network to verify its validity, and the method of verification is to execute the transaction repeatedly. As the number of applications grows exponentially and the logic of smart contracts becomes more complex, the computational resources required to verify their validity will increase exponentially, which is reflected in network congestion, high transaction fee, and so called "trading volume spillover".
 
 To fundamentally improve the scalability of the blockchain, we propose zkMove - a zero-knowledge proof-based smart contract runtime environment that combines Move, the most secure smart contract programming language, with PLONK, a maturing zero-knowledge proof technology, to "Move" computation from on-chain to off-chain, significantly improving the scalability of blockchain while ensuring security.
