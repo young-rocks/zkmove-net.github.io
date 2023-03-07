@@ -4,7 +4,7 @@ title: Join Us
 subtitle: 
 ---
 
-## Senior Move Language VM Engineer
+## Senior Software Engineer, Move Language VM
 
 Responsibilities
 - Participate in the design and development of the zkMove virtual machine.
@@ -20,10 +20,10 @@ Requirements
 Benefits
 - You can work remotely.
 
-## Senior Scaling and Privacy Protocal Engineer
+## Senior Software Engineer, Scaling and Privacy Protocol
 
 Responsibilities
-- Participate in the design and development of zkMove scaling&privacy protocal.
+- Participate in the design and development of zkMove scaling&privacy protocol.
 - Explore zkMove application scenarios.
 
 Requirements
@@ -34,8 +34,38 @@ Requirements
 Benefits
 - You can work remotely.
 
+## Senior Software Engineer, Cryptography
+
+Responsibilities
+
+- Participate in the design and development of proof aggregation, recursion, and composition strategies.
+- Participate in the design and optimization of the underlying zero-knowledge proof system.
+
+Requirements
+
+- Prior experience in cryptography, especially zero-knowledge proof system.
+- Experience programming in Rust.
+
+Benefits
+
+- You can work remotely.  
+
+## Chief Cryptographer
+
+Responsibilities
+
+- Lead the design and development of proof aggregation, recursion, and composition strategies.
+- Lead the design and optimization of the underlying zero-knowledge proof system.
+
+Requirements
+
+- Prior experience in cryptography, especially zero-knowledge proof system.
+- Experience programming in Rust.
+
+Benefits
+
+- You can work remotely.
+
+
 Contacts
 - Please send your resume to zkmove@aliyun.com
-
-Join us – If you’re a fan of web3 technologies and willing to dedicate your talents !
-Join us – Come to build something that rocks and let’s rock in the digital world !!
