@@ -67,5 +67,5 @@ Benefits
 - You can work remotely.
 
 
-###Contacts
-- Please send your resume to hr@zkmove.net
+### Contacts
+- Please send your resume to <hr@zkmove.net>
