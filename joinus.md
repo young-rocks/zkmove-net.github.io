@@ -68,4 +68,4 @@ Benefits
 
 
 ### Contacts
-- Please send your resume to <hr@zkmove.net>
+- Please send your resume to <contact@zkmove.net>
