@@ -67,5 +67,5 @@ Benefits
 - You can work remotely.
 
 
-Contacts
-- Please send your resume to zkmove@aliyun.com
+###Contacts
+- Please send your resume to hr@zkmove.net

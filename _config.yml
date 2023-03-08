@@ -46,7 +46,7 @@ title-img: /assets/img/logo.jpg
 # Select the social network links that you want to show in the footer.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "zkmove@aliyun.com"
+#  email: "zkmove@aliyun.com"
 #  rss: true  # remove this line if you don't want to show an RSS link at the bottom
 #  facebook: deanattali
   github: young-rocks
@@ -70,7 +70,7 @@ social-network-links:
 #  mastodon: instance.url/@username
 #  ORCID: your ORCID ID
 #  google-scholar: your google scholar
-  discord: https://discord.gg/d6yMS2yycq
+  discord: invite/d6yMS2yycq
 #  kaggle: yourname
 #  hackerrank: yourname
 
