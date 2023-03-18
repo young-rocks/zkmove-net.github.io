@@ -66,6 +66,22 @@ Benefits
 
 - You can work remotely.
 
+## Partnerships, Community & Growth Lead
+
+Responsibilities
+
+- Organize and participate in web3 events and meetups to connect with community members.
+- Develop and execute community engagement strategies to increase brand awareness.
+- Identify and source partnership opportunities with other web3 projects and stakeholders.
+
+Requirements
+
+- Passionate about the web3 industry.
+- Fluent in English and Mandarin, willing to travel.
+
+Benefits
+
+- You can work remotely.
 
 ### Contacts
 - Please send your resume to <contact@zkmove.net>
