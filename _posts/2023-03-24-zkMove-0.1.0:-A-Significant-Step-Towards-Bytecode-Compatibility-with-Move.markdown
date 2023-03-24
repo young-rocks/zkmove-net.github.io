@@ -38,4 +38,4 @@ As the core team expands, we're able to speed up productization significantly, w
 
 ### Join Us
 
-The zkMove project was initiated in July 2021 with the goal of enhancing the programmability of zero-knowledge proof systems. As of the end of 2022, a team of skilled VM experts had been established, and we anticipate that more technical and business talents will [JOIN US](./join_us.md) in the future.
+The zkMove project was initiated in July 2021 with the goal of enhancing the programmability of zero-knowledge proof systems. As of the end of 2022, a team of skilled VM experts had been established, and we anticipate that more technical and business talents will [JOIN US](/joinus/) in the future.
