@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "zkMove 0.1.0: A Significant Step Towards Bytecode Compatibility with Move"
+cover-img: /assets/img/blog/blog4.jpg
+thumbnail-img: /assets/img/blog/blog4.jpg
+date:   2023-03-24 11:00:00 +0800
+categories: release
+---
+
+zkMove 0.1.0 has recently been released, marking a significant milestone since its initial demo release in July of last year. This release is the first alpha version of zkMove that is now very close to being fully bytecode-compatible with Move.
+<!--more-->
+
+### Review
+
+The previous demo release showcased a stack-based Move bytecode virtual machine, which stored finite field elements in the operand stack, local variables, and global state. Using the halo2 zero-knowledge proof system, a VM circuit was built on top of this, composed of multiple sub-circuits including an execution circuit to constrain correct instruction execution and a memory circuit to ensure memory consistency.
+
+### New features
+
+After more than six months of intense development, the zkMove team has proudly released zkMove 0.1.0, packed with several remarkable features, including:
+
+1. Expanded support for complex value types: the new release now supports Struct and Reference value types, in addition to the previously supported U8, U64, U128, Bool, and AccountAddress value types. To enable concise constraints on borrowing of members of nested structs, the team has introduced a new addressing scheme.
+
+2. Near-complete support for Move bytecodes: The new version features stack operations, locals read/write, arithmetic and logical operations, jumps and function calls, struct packing and unpacking, as well as bitwise operations and type casting. In particular, borrowing of local values, global values and structure members is also supported.
+
+3. Global state support: a global state circuit is constructed to ensure consistency in state read/write.
+
+4. Poseidon Hash support: The release features support for Poseidon Hash, an efficient hashing algorithm known for its zero-knowledge friendliness.
+
+### Next step
+
+As the core team expands, we're able to speed up productization significantly, with iteration cycles now reduced from six months to just three. The upcoming version of zkMove, set to be released at the end of June, will include the following features:
+
+1. Support for arrays and generics, achieving full Move bytecode compatibility.
+
+2. Circuit optimization using application-specific design thinking.
+
+3. Further optimization of value types.
+
+### Join Us
+
+The zkMove project was initiated in July 2021 with the goal of enhancing the programmability of zero-knowledge proof systems. As of the end of 2022, a team of skilled VM experts had been established, and we anticipate that more technical and business talents will [JOIN US](./join_us.md) in the future.
