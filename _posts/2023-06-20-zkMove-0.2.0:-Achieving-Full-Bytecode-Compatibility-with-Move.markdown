@@ -2,7 +2,7 @@
 layout: post
 title:  "zkMove 0.2.0 -  Achieving Full Bytecode Compatibility with Move"
 cover-img: /assets/img/blog/blog5.jpeg
-#thumbnail-img: /assets/img/blog/blog4.jpg
+thumbnail-img: /assets/img/blog/blog5.jpeg
 date:   2023-06-20 12:00:00 +0800
 categories: release
 ---
@@ -34,4 +34,4 @@ The release also fixed some hidden bugs in previous release, leading to a more r
 
 ## What’s Next
 
-In the next few months, we’re going to continue implement new features like global states, imporve our performance and compatiblity with move, and mostly importmently, our privacy-centeralized programming model.
+Over the next few months, we will continue to implement new features, including transaction and state model, as well as proof aggregation and verification.
