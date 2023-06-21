@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "zkMove 0.2.0 -  Achieving Full Bytecode Compatibility with Move"
-cover-img: /assets/img/blog/blog5.jpeg
-thumbnail-img: /assets/img/blog/blog5.jpeg
+cover-img: /assets/img/blog/blog5.png
+thumbnail-img: /assets/img/blog/blog5.png
 date:   2023-06-20 12:00:00 +0800
 categories: release
 ---
@@ -16,7 +16,7 @@ We're thrilled to introduce to you what we have achieved in the last three month
 
 In the [last release](https://www.zkmove.net/2023-03-23-zkMove-0.1.0-A-Significant-Step-Towards-Bytecode-Compatibility-with-Move/), we set the goal that zkmove should achieve full move bytecode compatibility.
 
-Now, in this release, we have added support for **vectors**, **generics** - the two important parts of the move language, and also `LdConst`, which makes declaring const values in move possible.
+Now, in this release, we have added support for **vectors**, **generics** - the two important parts of the move language, and also LdConst, which makes declaring const values in move possible.
 
 - When designing constraints for vectors, we concluded to a new *value and adressing system,* unifying the way of expressing move value in the circuit.
 - We used as much information in bytecodes as we could to implement performant constraints for move generics.
