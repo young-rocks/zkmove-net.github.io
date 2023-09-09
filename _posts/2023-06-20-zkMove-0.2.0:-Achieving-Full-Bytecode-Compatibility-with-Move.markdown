@@ -7,9 +7,7 @@ date:   2023-06-20 12:00:00 +0800
 categories: release
 ---
 
-zkMove [0.2.0](https://github.com/young-rocks/zkmove/releases/tag/v0.2.0) is out!
-
-It's a big step forward compared to v0.1.0. some important features are implemented, circuit performance optimized, and also bugs fixed!
+zkMove [0.2.0](https://github.com/young-rocks/zkmove/releases/tag/v0.2.0) is out! It's a big step forward compared to v0.1.0. some important features are implemented, circuit performance optimized, and also bugs fixed!
 We're thrilled to introduce to you what we have achieved in the last three months.
 
 ## New Features
