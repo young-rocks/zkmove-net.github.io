@@ -4,4 +4,8 @@ title: About Us
 subtitle: 
 ---
 
-This project was created in July 2021. The goal is to improve the programmability of zero-knowledge proof systems. At the end of 2022, we formed a small team of top zkVM experts. We look forward to having more technical and business talents [JOIN US](/joinus/) as members of the founding team.
+We are a small, fully-distributed team. We leverage underlying blockchain infrastructure to create value for users.
+
+The long-term goal of the team is to combine zero-knowledge proof technology with the Move programming language to create safe, efficient and trustless protocols to enhance blockchain capabilities.
+
+We look forward to having more technical and business talents [JOIN US](/joinus/) as members of the founding team.
