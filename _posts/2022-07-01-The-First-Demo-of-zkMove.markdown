@@ -68,7 +68,7 @@ To handle conditional branching, ProgramBlock was introduced to express the cont
 
 The implementation of the circuits is a bit complicated, we will introduce them in a separate document, now is the demo time!
 
-We have a [CLI](https://github.com/young-rocks/zkmove/tree/master/demo) and some examples to demonstrate the functionality of the zkMove virtual machine. Below command will first compile *add.move* into bytecode, execute the bytecode to generate an execution trace, then build the circuit and setup the proving/verification key, and then generate a zkp for the execution with the proving key and finally verify the proof with the verification key.
+We have a [CLI](https://github.com/zkmove/zkmove/tree/master/demo) and some examples to demonstrate the functionality of the zkMove virtual machine. Below command will first compile *add.move* into bytecode, execute the bytecode to generate an execution trace, then build the circuit and setup the proving/verification key, and then generate a zkp for the execution with the proving key and finally verify the proof with the verification key.
 
 ```
 bin/zkmove run -s examples/scripts/add.move
