@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Universal Halo2 Verifier for Move Ecosystem"
-cover-img: /assets/img/blog/blog6.png
+cover-img: /assets/img/blog/blog6-bg.png
 thumbnail-img: /assets/img/blog/blog6.png
 date:   2023-12-20 12:00:00 +0800
 categories: release
