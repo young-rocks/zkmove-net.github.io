@@ -2,7 +2,7 @@
 layout: post
 title:  "zkMove v0.4.0: Achieving a Tenfold Performance Leap"
 cover-img: /assets/img/blog/blog7.png
-thumbnail-img: /assets/img/blog/blog7.png
+thumbnail-img: /assets/img/blog/blog7-thumbnail.png
 date:   2025-01-14 12:00:00 +0800
 categories: release
 ---
