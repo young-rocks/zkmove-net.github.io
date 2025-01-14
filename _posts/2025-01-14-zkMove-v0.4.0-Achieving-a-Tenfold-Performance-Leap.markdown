@@ -1,0 +1,152 @@
+---
+layout: post
+title:  "zkMove v0.4.0: Achieving a Tenfold Performance Leap"
+cover-img: /assets/img/blog/blog7.png
+thumbnail-img: /assets/img/blog/blog7.png
+date:   2025-01-14 12:00:00 +0800
+categories: release
+---
+
+zkMove, a zero-knowledge virtual machine (ZKVM) that proves the execution of any Move smart contract, has just unveiled version v0.4.0. This release represents a significant overhaul, with the entire circuit rewritten to incorporate the latest advancements in academic research. Let’s delve into what has been achieved:
+
+## Key Features
+
+- Employs state-of-the-art circuit design and advanced memory consistency checking algorithms.
+- Supports complex data types and safety checks while ensuring optimal performance.
+- Client-side proving ensures all confidential computations occur on the user's device
+- Compatible with commonly used development tools in the Move ecosystem.
+- Allows existing Move programs to run without modifications.
+
+## A 10x Performance Improvement
+
+Compared to version v0.3, zkMove v0.4.0 achieves a 10–40x reduction in client-side proving time and reduces proof size by approximately 10x. Performance has now reached commercially viable levels.
+
+Testing environment: *Macbook Pro, Apple M1 Max, 64 GB RAM*
+
+<img src="/assets/img/blog/perf.png" alt="drawing" width="600"/>
+
+Note: Version v0.3 was unable to execute the test case N=100 due to high resource overhead.
+
+<img src="/assets/img/blog/perf2.png" alt="drawing" width="165"/>
+
+Achieving this tenfold performance boost wasn’t easy. In addition to leveraging advanced circuit design and cutting-edge memory consistency checking algorithms, we had to overcome unique challenges posed by the Move language.
+
+## **Move's Unique Challenges**
+
+Unlike other smart contract languages, Move is the only one with runtime type safety. In MoveVM, values stored in the stack and local variables are typed, which is starkly different from languages like Solidity, where all types are compiled into U256. This raises significant challenges:
+
+- How do we represent typed values in a circuit?
+- How can we perform type checks without compromising performance?
+
+To address these challenges, we focused on four design areas:
+
+1. Circuit Structure
+2. Memory Consistency Checking
+3. Value Representation
+4. Type Checking
+
+## Circuit Structure
+
+MoveVM is a stack-based bytecode virtual machine comprising an interpreter, an operand stack, local variable storage, and global state. Instructions read values from locals to stack, operate on them, and write the results back to locals.
+
+To prove that Move bytecode executes correctly in MoveVM, we need to prove:
+
+1. The correct bytecode was loaded.
+2. Each bytecode instruction was executed correctly.
+3. Memory consistency—values read from memory match the last values written.
+
+zkMove circuit is built based on the Halo2-KZG proof system. It allows multiple proofs to be nested without significantly increasing the proof size. 
+
+To prove that the correct bytecode is loaded, we use a Fixed Table to store bytecode, leveraging the compact nature of Move bytecode to keep lookup tables small. To prove that each bytecode was executed correctly, we constructed an execution circuit. The circuit design incorporates both common cells (used by all instructions) and opcode-specific cells, optimizing efficiency.
+
+<img src="/assets/img/blog/cells.png" alt="drawing" width="600"/>
+
+## Memory Consistency Checking
+
+Ensuring consistent memory access is crucial for a ZKVM. The previous version of zkMove used a sorting-based algorithm to verify memory consistency. However, this approach had poor performance and couldn’t meet client-side proving requirements.
+
+The new algorithm is inspired by recent research, "Two Shuffles Make a RAM: Improved Constant Overhead Zero Knowledge RAM" (July 2023), which builds on the 1994 classic paper "Checking the Correctness of Memories."
+
+The concept is straightforward:
+
+
+Start with two sets, **R** for reading and **W** for writing.
+
+1. **Initialization:**
+    - **R** starts empty.
+    - **W** starts with tuples `(address, value, clock)` for all memory locations, with value and clock initialized to zero.
+2. **During Execution:**
+    - For memory reads, add the tuple `(a, v, c)` to **R** and `(a, v, now)` to **W**, where **a** is the address, **v** is the value, **c** is the most recent clock for the address.
+    - For memory writes, add `(a, v, c)` to **R** and `(a, new_v, now)` to **W**.
+3. **At Termination:**
+    - All tuples for each memory address should be written to **R** and no longer written to **W**.
+
+If the prover is honest, **R** and **W** should be permutations of each other, ensuring consistency.
+
+This algorithm applies to both locals and stack. And because of the characteristics of the stack itself, the algorithm will be simpler.
+
+## Value Representation
+
+MoveVM supports both simple types (e.g., U8, U64, Bool) and complex types (e.g., Struct, Vector). In zkMove circuits:
+
+- Simple types are uniformly represented using a Word containing two BN254 scalar field elements.
+- Complex types, such as Struct and Vector, require additional representation to capture their member layouts.
+
+In zkMove circuit, a struct is represented as a tree and then flattened into a list of quadruples `(index, sub_index, value, value_header)` . For example:
+
+```rust
+struct A {
+    a0: u8,
+    a1: B,
+}
+struct B {
+    b0: u8,
+    b1: u64,
+    b2: u64,
+}
+let b = B {
+    b0: 1u8,
+    b1: 2u64,
+    b2: 3u64,
+}
+let a = A {
+    a0: 0u8,
+    a1: b, 
+}
+```
+
+The member layout of struct 'a' can be represented as a tree (assuming 'a' is stored on the stack with index 1):
+
+
+
+<img src="/assets/img/blog/value.png" alt="drawing" width="450"/>
+
+This tree can then be flattened into the following list:
+
+|  | index | sub_index | value | value_header |
+| --- | --- | --- | --- | --- |
+| a | 1 | [0,0,0,0,0,0,0,0] | 2,6 | true |
+| a0 | 1 | [1,0,0,0,0,0,0,0] | 0u8 | false |
+| b | 1 | [2,0,0,0,0,0,0,0] | 3,4 | true |
+| b0 | 1 | [2,1,0,0,0,0,0,0] | 1u8 | false |
+| b1 | 1 | [2,2,0,0,0,0,0,0] | 2u64 | false |
+| b2 | 1 | [2,3,0,0,0,0,0,0] | 3u64 | false |
+
+In this way, a struct is represented as multiple simple types, and we can work with structs in the same way we work with simple types, efficiently and safely.
+
+## Type Checking
+
+Type checking underpins zkMove’s security and includes:
+
+- **Static Type Checking:** Performed during smart contract deployment by the bytecode verifier. zkMove leverages existing Move bytecode verification during the generation of proving and verification keys. In future iterations, we aim to decentralize this process by proving that contracts have been deployed on-chain.
+- **Dynamic Type Checking:** Performed during runtime for operations like passing arguments, creating values, and modifying values. In other cases, reading and writing values does not require type checking. We use MMC to ensure that values are not tampered with.
+
+## Future roadmap
+
+Looking ahead, zkMove aims to:
+
+1. Adopt state-of-the-art proving system, try to reduce the client-side proving time to less than 1 second.
+2. Support zk-native storage proofs.
+3. Introduce a pluggable ZK framework for the Move ecosystem.
+
+It's still a bit difficult to cover the design of zkMove in a short article, so here is just a selection of the most important points. We hope it will be useful for ZKVM developers, and we look forward to more developers joining us. Thank you for your interest and support!
